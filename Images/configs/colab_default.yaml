@@ -1,0 +1,53 @@
+name: ???
+modality: ???
+total_batch: ??? 
+batch_size: ???
+wandb_name: null 
+resume_from: null 
+models_dir: null 
+amp: ???  #automatic mixed precision
+profile: ??? # profile the training
+N_val_visualize: ???
+align_face: ??? 
+FER6: ???
+high_intensity: ???
+
+
+train:
+  num_iter: ???  #total_batch=128  6969/128=54.44 ->1 epoch || total_batch=256.  6969/256=27.22 ->1 epoch
+  eval_freq: ???  #every 25% of an epoch
+  max_grad_norm: ???
+  loss_fn: ??? # 'CE_Center' # 'CE' # 'Focal'
+  optimizer: ??? # 'ADAM' # 'SGD'
+  scheduler: ??? # 'StepLR' # 'CosineAnnealing' # 'OneCycleLR' #'WarmupCosineAnnealing' #''
+  lambda_global: ???
+  lambda_island: ???
+  
+dataset:
+  name: ???
+  annotations_path: ???
+  workers: ??? 
+  RGB:
+    data_path: ???
+  DEPTH:
+    data_path: ???
+
+models:
+  RGB:
+    model: ???
+    kwargs: {}
+    lr: ???
+    weight_decay: ???
+    dropout: 0.1
+  DEPTH:
+    model: ???
+    kwargs: {}
+    lr: ???
+    weight_decay: ???
+    dropout: 0.1
+  FUSION:
+    model: ???
+    kwargs: {}
+    lr: ???
+    weight_decay: ???
+    dropout: 0.1
